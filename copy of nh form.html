@@ -33,10 +33,14 @@
 		</tr>
 		<tr>
 			<td>&nbsp;</td>
-			<td><button id="btn" style="visibility: hidden;" onclick="dontShow(2);" type="submit" value="Submit"></button></td>
+			<td><button id="btn" onclick="" type="submit" value="Submit"></button></td>
 		</tr>
 	</tbody>
 </table>
+
+<script>
+	document.getElementById("btn").disabled = true;
+</script>
 
 <script>
 function myFunction() {
@@ -44,7 +48,8 @@ function myFunction() {
 	var y = document.forms["myForm"]["email"].value;
 	var z = document.forms["myForm"]["contact"].value;
 	if ((x&&y&&z) != "") {
-    document.getElementById("btn").style.visibility = "visible";
+    document.getElementById("btn").disabled = false;
+	document.getElementById("btn").onclick = "dontShow(6);";
 	}
 }
 </script>
