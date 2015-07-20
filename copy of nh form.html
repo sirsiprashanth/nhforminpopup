@@ -13,15 +13,15 @@
 	<tbody>
 		<tr>
 			<td><label>Your Name:</label></td>
-			<td><input maxlength="15" name="fname" placeholder="Your Name" type="text" /></td>
+			<td><input maxlength="15" name="fname" id="fname" onblur="myFunction()" placeholder="Your Name" type="text" required /></td>
 		</tr>
 		<tr>
 			<td><label>Phone Number:</label></td>
-			<td><input maxlength="15" name="contact" placeholder="Phone Number" type="tel" /></td>
+			<td><input maxlength="15" name="contact" id="contact" placeholder="Phone Number" type="tel" onblur="myFunction()" required /></td>
 		</tr>
 		<tr>
 			<td><label>Email:</label></td>
-			<td><input maxlength="40" name="email" placeholder="Enter your Email" type="email" /></td>
+			<td><input maxlength="40" id="email" name="email" placeholder="Enter your Email" type="email" onblur="myFunction()" required /></td>
 		</tr>
 		<tr>
 			<td><label>Course Interested:</label></td>
@@ -33,9 +33,21 @@
 		</tr>
 		<tr>
 			<td>&nbsp;</td>
-			<td><button onclick="dontShow(2);" type="submit"></button></td>
+			<td><button id="btn" style="visibility: hidden;" onclick="dontShow(2);" type="submit" value="Submit"></button></td>
 		</tr>
 	</tbody>
 </table>
+
+<script>
+function myFunction() {
+	var x = document.forms["myForm"]["fname"].value;
+	var y = document.forms["myForm"]["email"].value;
+	var z = document.forms["myForm"]["contact"].value;
+	if ((x&&y&&z) != "") {
+    document.getElementById("btn").style.visibility = "visible";
+	}
+}
+</script>
+
 </form>
 </div>
